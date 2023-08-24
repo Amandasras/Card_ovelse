@@ -1,15 +1,39 @@
 ---
+import Card from "../components/Card.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="style.css" />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="outlineBox">
+      <Card title="Best of the day" description="Shots featured" />
+      <Card title="Featured streams" description="Watch livestreams" />
+      <Card title="Subscriptions" description="Premium content" />
+      <Card title="Creative feed" description="Premium feed" />
+    </div>
+  </body>
 </html>
+
+<style>
+  @import "https://unpkg.com/open-props";
+  body {
+    background: linear-gradient(to right, #f9a8d4, #818cf8);
+  }
+
+  .outlineBox {
+    background-color: #fff;
+    max-width: 400px;
+    height: 410px;
+    border-radius: var(--radius-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>

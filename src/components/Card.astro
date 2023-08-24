@@ -1,0 +1,69 @@
+---
+const { title, description } = Astro.props;
+---
+
+<article>
+  <div class="box"></div>
+  <div class="text">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+  <div class="icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      ><path
+        fill="currentColor"
+        d="M16.175 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.713t.3-.712L16.175 13Z"
+      ></path></svg
+    >
+  </div>
+</article>
+
+<style>
+  /* Open props bruges ikke lige nu, men skal bare være et eksempel på hvordan man kan importere propsene og bruge dem direkte fra hjmmesiden. */
+  @import "https://unpkg.com/open-props";
+
+  .box {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #cbd5e1;
+    /* margin: 1.5rem 1rem 0 1rem; */
+    margin: 000 1rem;
+    border-radius: 5px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    align-items: center;
+
+    padding: 0.7rem 1.7rem 0.7rem 0.7rem;
+    margin-left: 1.5rem;
+  }
+  .text h3,
+  p {
+    margin: 0.5rem;
+  }
+  .text p {
+    color: #9299a2;
+  }
+
+  article:hover {
+    background-color: #f1f5f9;
+  }
+
+  .icon {
+    visibility: hidden;
+    color: #9333ea;
+  }
+
+  article:hover .icon {
+    visibility: visible;
+  }
+</style>
